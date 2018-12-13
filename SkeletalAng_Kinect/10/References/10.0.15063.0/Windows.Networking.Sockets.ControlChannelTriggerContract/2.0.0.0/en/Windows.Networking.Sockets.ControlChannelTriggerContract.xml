@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Windows.Networking.Sockets.ControlChannelTriggerContract</name>
+  </assembly>
+  <members>
+    <member name="T:Windows.Networking.Sockets.ControlChannelTrigger">
+      <summary>Enables real time notifications to be received in the background for objects that establish a TCP connection and wish to be notified of incoming traffic. </summary>
+    </member>
+    <member name="M:Windows.Networking.Sockets.ControlChannelTrigger.#ctor(System.String,System.UInt32)">
+      <summary>Creates a new Windows.Networking.Sockets.ControlChannelTrigger object with a control channel trigger ID and a value for the server keep-alive interval. </summary>
+      <param name="channelId">A string used to differentiate various control channel triggers on the local computer. The maximum length allowed for this string is 64 characters.</param>
+      <param name="serverKeepAliveIntervalInMinutes">The keep-alive interval, in minutes, registered with the system to indicate when the app and network connections used should wake up.</param>
+    </member>
+    <member name="M:Windows.Networking.Sockets.ControlChannelTrigger.#ctor(System.String,System.UInt32,Windows.Networking.Sockets.ControlChannelTriggerResourceType)">
+      <summary>Creates a new Windows.Networking.Sockets.ControlChannelTrigger object with a control channel trigger ID, a value for the server keep-alive interval, and the resource type requested for the control channel trigger. </summary>
+      <param name="channelId">A string used to differentiate various control channel triggers on the local computer. The maximum length allowed for this string is 64 characters.</param>
+      <param name="serverKeepAliveIntervalInMinutes">The keep-alive interval, in minutes, registered with the system to indicate when the app and network connections used should wake up.</param>
+      <param name="resourceRequestType">The resource type requested for the control channel trigger.</param>
+    </member>
+    <member name="P:Windows.Networking.Sockets.ControlChannelTrigger.ControlChannelTriggerId">
+      <summary>Gets a string that can be used to differentiate various control channel triggers on the local computer. </summary>
+      <returns>A string that can be used to differentiate various control channel triggers.</returns>
+    </member>
+    <member name="P:Windows.Networking.Sockets.ControlChannelTrigger.CurrentKeepAliveIntervalInMinutes">
+      <summary>Gets the network keep-alive interval, in minutes, maintained by low-level network components in the TCP stack based on current network conditions. </summary>
+      <returns>The network keep-alive interval, in minutes, maintained by low-level network components in the TCP stack based on current network conditions.</returns>
+    </member>
+    <member name="P:Windows.Networking.Sockets.ControlChannelTrigger.IsWakeFromLowPowerSupported">
+      <summary>Gets a value indicating whether waking from low power states is supported.</summary>
+      <returns>If **true**, then waking from low power states is supported.</returns>
+    </member>
+    <member name="P:Windows.Networking.Sockets.ControlChannelTrigger.KeepAliveTrigger">
+      <summary>Gets an object that represents the keep-alive trigger associated with the Windows.Networking.Sockets.ControlChannelTrigger object that an app should use to bind the activation class with the background broker infrastructure. </summary>
+      <returns>A string that represents the activation class ID for the keep-alive background task.</returns>
+    </member>
+    <member name="P:Windows.Networking.Sockets.ControlChannelTrigger.PushNotificationTrigger">
+      <summary>Gets an object that represents the push notification trigger associated with the Windows.Networking.Sockets.ControlChannelTrigger object that an app should use to bind the activation class with the background broker infrastructure. </summary>
+      <returns>A string that represents the activation class ID for the push notification background task.</returns>
+    </member>
+    <member name="P:Windows.Networking.Sockets.ControlChannelTrigger.ServerKeepAliveIntervalInMinutes">
+      <summary>Get or set the server keep-alive interval, in minutes, registered with the system to indicate when the app and associated network connections used should wake up. </summary>
+      <returns>The server keep-alive interval, in minutes, registered with the system to indicate when the app and associated network connections used should wake up.</returns>
+    </member>
+    <member name="P:Windows.Networking.Sockets.ControlChannelTrigger.TransportObject">
+      <summary>Gets the transport object that the system is using for the transport connection associated with the Windows.Networking.Sockets.ControlChannelTrigger object. </summary>
+      <returns>The transport object that the system is using for the transport connection</returns>
+    </member>
+    <member name="M:Windows.Networking.Sockets.ControlChannelTrigger.Close">
+      <summary>Closes the Windows.Networking.Sockets.ControlChannelTrigger object. </summary>
+    </member>
+    <member name="M:Windows.Networking.Sockets.ControlChannelTrigger.DecreaseNetworkKeepAliveInterval">
+      <summary>Provides a way for an app to indicate that the network keep-alive interval maintained by the system with network intermediaries to wake up was too long and should be decreased. This method applies to class elements in the Windows.Networking.Sockets and related namespaces. </summary>
+    </member>
+    <member name="M:Windows.Networking.Sockets.ControlChannelTrigger.FlushTransport">
+      <summary>Flushes any networking data used by the transport connection associated with the Windows.Networking.Sockets.ControlChannelTrigger to the networking stack. </summary>
+    </member>
+    <member name="M:Windows.Networking.Sockets.ControlChannelTrigger.UsingTransport(System.Object)">
+      <summary>Sets the transport connection to be used by a control channel trigger by class elements in the Windows.Networking.Sockets and related namespaces. </summary>
+      <param name="transport">The instance of the network class that represents the network transport.</param>
+    </member>
+    <member name="M:Windows.Networking.Sockets.ControlChannelTrigger.WaitForPushEnabled">
+      <summary>Allows an app to notify the system that a connection has been established and the system should complete the internal configuration of the control channel trigger. </summary>
+      <returns>A value that indicates if the system was able to complete configuration of a Windows.Networking.Sockets.ControlChannelTrigger object.</returns>
+    </member>
+    <member name="T:Windows.Networking.Sockets.ControlChannelTriggerContract">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Windows.Networking.Sockets.ControlChannelTriggerResetReason">
+      <summary>The reason why a Windows.Networking.Sockets.ControlChannelTrigger was reset. </summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerResetReason.ApplicationRestart">
+      <summary>he Windows.Networking.Sockets.ControlChannelTrigger was reset as a result of an app restart.</summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerResetReason.FastUserSwitched">
+      <summary>The Windows.Networking.Sockets.ControlChannelTrigger was reset as a result of fast user switching.</summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerResetReason.LowPowerExit">
+      <summary>The Windows.Networking.Sockets.ControlChannelTrigger was reset as a result of a low power exit (Connected Standby exit).</summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerResetReason.QuietHoursExit">
+      <summary>The Windows.Networking.Sockets.ControlChannelTrigger was reset as a result of quiet hours being set on the device and quiet hours having ended.</summary>
+    </member>
+    <member name="T:Windows.Networking.Sockets.ControlChannelTriggerResourceType">
+      <summary>The resource type used by a control channel trigger. </summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerResourceType.RequestHardwareSlot">
+      <summary>Request a hardware slot from the system.</summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerResourceType.RequestSoftwareSlot">
+      <summary>Request a software slot from the system.</summary>
+    </member>
+    <member name="T:Windows.Networking.Sockets.ControlChannelTriggerStatus">
+      <summary>Specifies if the system was able to complete configuration of a Windows.Networking.Sockets.ControlChannelTrigger object for use by class elements in the Windows.Networking.Sockets and related namespaces. </summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerStatus.HardwareSlotAllocated">
+      <summary>A hardware slot was allocated by the system.</summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerStatus.HardwareSlotRequested">
+      <summary>The policy check succeeded and a hardware slot has been requested from the system.</summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerStatus.PolicyError">
+      <summary>A policy error occurred when the system tried to complete configuration of a Windows.Networking.Sockets.ControlChannelTrigger. This error can occur when an app has requested more connections for hardware or software slots than are permitted by system policy.</summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerStatus.ServiceUnavailable">
+      <summary>The service provided by the Windows.Networking.Sockets.ControlChannelTrigger is unavailable. This can happen if the network connection broker service is not yet ready but the app is trying to establish a Windows.Networking.Sockets.ControlChannelTrigger channel. This status code is provided under the following conditions:</summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerStatus.SoftwareSlotAllocated">
+      <summary>The policy check succeeded and a software slot was allocated by the system.</summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerStatus.SystemError">
+      <summary>A system error occurred when the system tried to complete configuration of a Windows.Networking.Sockets.ControlChannelTrigger for a hardware slot.</summary>
+    </member>
+    <member name="F:Windows.Networking.Sockets.ControlChannelTriggerStatus.TransportDisconnected">
+      <summary>The network transport associated with the Windows.Networking.Sockets.ControlChannelTrigger was disconnected. The underlying TCP connection was already disconnected by a TCP reset received from the remote destination or a graceful disconnect by either the app or the remote destination. The most common occurrence is a TCP reset or a graceful disconnect sent by the remote destination.</summary>
+    </member>
+    <member name="T:Windows.Networking.Sockets.IControlChannelTriggerEventDetails">
+      <summary>An object instantiated by the background broker infrastructure that is used to differentiate control channel triggers. </summary>
+    </member>
+    <member name="P:Windows.Networking.Sockets.IControlChannelTriggerEventDetails.ControlChannelTrigger">
+      <summary>Gets the Windows.Networking.Sockets.ControlChannelTrigger object associated with an Windows.Networking.Sockets.IControlChannelTriggerEventDetails object. </summary>
+      <returns>A Windows.Networking.Sockets.ControlChannelTrigger object.</returns>
+    </member>
+    <member name="T:Windows.Networking.Sockets.IControlChannelTriggerResetEventDetails">
+      <summary>An object instantiated by the background broker infrastructure for a **ControlChannelReset** event to indicate that a Windows.Networking.Sockets.ControlChannelTrigger was reset. </summary>
+    </member>
+    <member name="P:Windows.Networking.Sockets.IControlChannelTriggerResetEventDetails.HardwareSlotReset">
+      <summary>A value that indicates if a hardware slot was affected by a Windows.Networking.Sockets.ControlChannelTrigger reset event. </summary>
+      <returns>A value that indicates if a hardware slot was affected by a Windows.Networking.Sockets.ControlChannelTrigger reset event.</returns>
+    </member>
+    <member name="P:Windows.Networking.Sockets.IControlChannelTriggerResetEventDetails.ResetReason">
+      <summary>A value that indicates the reason why a Windows.Networking.Sockets.ControlChannelTrigger was reset. </summary>
+      <returns>A value that indicates the reason why a Windows.Networking.Sockets.ControlChannelTrigger was reset.</returns>
+    </member>
+    <member name="P:Windows.Networking.Sockets.IControlChannelTriggerResetEventDetails.SoftwareSlotReset">
+      <summary>A value that indicates if a software slot was affected by a Windows.Networking.Sockets.ControlChannelTrigger reset event. </summary>
+      <returns>A value that indicates if a software slot was affected by a Windows.Networking.Sockets.ControlChannelTrigger reset event.</returns>
+    </member>
+  </members>
+</doc>

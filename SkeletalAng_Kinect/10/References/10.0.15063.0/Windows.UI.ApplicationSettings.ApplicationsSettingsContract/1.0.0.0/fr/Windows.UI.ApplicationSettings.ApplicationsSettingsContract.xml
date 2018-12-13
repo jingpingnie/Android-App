@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Windows.UI.ApplicationSettings.ApplicationsSettingsContract</name>
+  </assembly>
+  <members>
+    <member name="T:Windows.UI.ApplicationSettings.ApplicationsSettingsContract">
+      <summary>
+      </summary>
+    </member>
+    <member name="T:Windows.UI.ApplicationSettings.SettingsEdgeLocation">
+      <summary>Spécifie le bord de l'écran où les symboles de paramètres apparaissent.</summary>
+      <deprecated type="deprecate">SettingsEdgeLocation est déconseillé et peut ne pas fonctionner sur toutes les plateformes. Pour plus d'informations, consultez MSDN.</deprecated>
+    </member>
+    <member name="F:Windows.UI.ApplicationSettings.SettingsEdgeLocation.Left">
+      <summary>Les symboles de paramètres apparaissent sur le bord gauche de l'écran.</summary>
+    </member>
+    <member name="F:Windows.UI.ApplicationSettings.SettingsEdgeLocation.Right">
+      <summary>Les symboles de paramètres apparaissent sur le bord droit de l'écran.</summary>
+    </member>
+    <member name="T:Windows.UI.ApplicationSettings.SettingsPane">
+      <summary>Une classe statique qui permet à l'application de contrôler le volet des symboles des paramètres. L'application peut ajouter ou supprimer des commandes, recevoir une notification lorsque l'utilisateur ouvre le volet, ou ouvrir le volet par programmation.</summary>
+      <deprecated type="deprecate">SettingsPane est déconseillé et peut ne pas fonctionner sur toutes les plateformes. Pour plus d'informations, consultez MSDN.</deprecated>
+    </member>
+    <member name="P:Windows.UI.ApplicationSettings.SettingsPane.Edge">
+      <summary>Obtient une valeur indiquant si le symbole des paramètres apparaît sur le bord gauche ou droit de l'écran.</summary>
+      <returns>Emplacement des symboles des paramètres.</returns>
+    </member>
+    <member name="E:Windows.UI.ApplicationSettings.SettingsPane.CommandsRequested">
+      <summary>Se produit lorsque l'utilisateur ouvre le volet des paramètres. L'écoute de cet événement permet à l'application d'initialiser les commandes de configuration et de suspendre son interface utilisateur jusqu'à ce que l'utilisateur ferme le volet.</summary>
+    </member>
+    <member name="M:Windows.UI.ApplicationSettings.SettingsPane.GetForCurrentView">
+      <summary>Obtient un objet Windows.UI.ApplicationSettings.SettingsPane qui est associé à la vue d’application active (c'est-à-dire, avec Windows.UI.Core.CoreWindow).</summary>
+      <deprecated type="deprecate">SettingsPane est déconseillé et peut ne pas fonctionner sur toutes les plateformes. Pour plus d'informations, consultez MSDN.</deprecated>
+      <returns>Volet des paramètres.</returns>
+    </member>
+    <member name="M:Windows.UI.ApplicationSettings.SettingsPane.Show">
+      <summary>Affiche le volet des symboles des paramètres à l'utilisateur.</summary>
+      <deprecated type="deprecate">SettingsPane est déconseillé et peut ne pas fonctionner sur toutes les plateformes. Pour plus d'informations, consultez MSDN.</deprecated>
+    </member>
+    <member name="T:Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest">
+      <summary>Contient des propriétés qui sont disponibles uniquement pendant l'événement Windows.UI.ApplicationSettings.SettingsPane.CommandsRequested.</summary>
+      <deprecated type="deprecate">SettingsPaneCommandsRequest est déconseillé et peut ne pas fonctionner sur toutes les plateformes. Pour plus d'informations, consultez MSDN.</deprecated>
+    </member>
+    <member name="P:Windows.UI.ApplicationSettings.SettingsPaneCommandsRequest.ApplicationCommands">
+      <summary>Vecteur qui est disponible lors de l'événement Windows.UI.ApplicationSettings.SettingsPane.CommandsRequested. Ajoutez-y les objets Windows.UI.ApplicationSettings.SettingsCommand pour les rendre disponibles dans l'interface utilisateur Windows.UI.ApplicationSettings.SettingsPane.</summary>
+      <returns>Vecteur des objets Windows.UI.ApplicationSettings.SettingsCommand.</returns>
+    </member>
+    <member name="T:Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs">
+      <summary>Contient les arguments qui sont disponibles à partir de l'objet événement au cours de l'événement Windows.UI.ApplicationSettings.SettingsPane.CommandsRequested.</summary>
+      <deprecated type="deprecate">SettingsPaneCommandsRequestedEventArgs est déconseillé et peut ne pas fonctionner sur toutes les plateformes. Pour plus d'informations, consultez MSDN.</deprecated>
+    </member>
+    <member name="P:Windows.UI.ApplicationSettings.SettingsPaneCommandsRequestedEventArgs.Request">
+      <summary>Instance de Windows.UI. ApplicationSettings.SettingsPaneCommandsRequest qui est disponible lors de l'événement Windows.UI.ApplicationSettings.SettingsPane.CommandsRequested.</summary>
+      <returns>Objet de demande des commandes.</returns>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Windows.ApplicationModel.Resources.Management.ResourceIndexerContract</name>
+  </assembly>
+  <members>
+    <member name="T:Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate">
+      <summary>Представляет единственное возможное значение для данного ресурса и связанные с этим ресурсом квалификаторы.</summary>
+    </member>
+    <member name="P:Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate.Metadata">
+      <summary>Получает список пар значений имен метаданных.</summary>
+      <returns>Список пар строк, каждая из которых содержит имя Windows.ApplicationModel.Resources.Management.IndexedResourceQualifier и его значение.</returns>
+    </member>
+    <member name="P:Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate.Qualifiers">
+      <summary>Получает список объектов Windows.ApplicationModel.Resources.Management.IndexedResourceQualifier.</summary>
+      <returns>Список объектов Windows.ApplicationModel.Resources.Management.IndexedResourceQualifier.</returns>
+    </member>
+    <member name="P:Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate.Type">
+      <summary>Получает свойство типа, определяющее, является ли ресурс файлом или строкой.</summary>
+      <returns>Значение из перечисления Windows.ApplicationModel.Resources.Management.IndexedResourceType.</returns>
+    </member>
+    <member name="P:Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate.Uri">
+      <summary>Получает именованный ресурс Windows.Foundation.Uri.</summary>
+      <returns>Именованный ресурс Windows.Foundation.Uri.</returns>
+    </member>
+    <member name="P:Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate.ValueAsString">
+      <summary>Возвращает значение кандидата в формате [String](https://msdn.microsoft.com/library/system.string.aspx).</summary>
+      <returns>Если кандидатом является файл, значение — это путь к файлу (например, images\logo.scale-100.png) относительно корня проекта, который передается в объект Windows.ApplicationModel.Resources.Management.ResourceIndexer.#ctor(Windows.Foundation.Uri). Если кандидатом является строка, значение — фактическая строка (например, Hello World).</returns>
+    </member>
+    <member name="M:Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate.GetQualifierValue(System.String)">
+      <summary>Возвращает значение квалификатора для заданного имени.</summary>
+      <param name="qualifierName">Имя квалификатора.</param>
+      <returns>Значение квалификатора.</returns>
+    </member>
+    <member name="T:Windows.ApplicationModel.Resources.Management.IndexedResourceQualifier">
+      <summary>Представляет объект, который объявляет, в каком контексте ресурс является приемлемым.</summary>
+    </member>
+    <member name="P:Windows.ApplicationModel.Resources.Management.IndexedResourceQualifier.QualifierName">
+      <summary>Получает имя квалификатора.</summary>
+      <returns>Имя квалификатора, такое как language, contrast или scale.</returns>
+    </member>
+    <member name="P:Windows.ApplicationModel.Resources.Management.IndexedResourceQualifier.QualifierValue">
+      <summary>Получает значение квалификатора.</summary>
+      <returns>Значение квалификатора. Падеж значения квалификатора нужно сохранять с первого обнаруженного при индексировании экземпляра квалификатора.</returns>
+    </member>
+    <member name="T:Windows.ApplicationModel.Resources.Management.IndexedResourceType">
+      <summary>Указывает, является ли Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate строкой или файлом.</summary>
+    </member>
+    <member name="F:Windows.ApplicationModel.Resources.Management.IndexedResourceType.EmbeddedData">
+      <summary>Зарезервировано.</summary>
+    </member>
+    <member name="F:Windows.ApplicationModel.Resources.Management.IndexedResourceType.Path">
+      <summary>Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate — это файл.</summary>
+    </member>
+    <member name="F:Windows.ApplicationModel.Resources.Management.IndexedResourceType.String">
+      <summary>Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate — это строка.</summary>
+    </member>
+    <member name="T:Windows.ApplicationModel.Resources.Management.ResourceIndexer">
+      <summary>Индексирует исходные файлы ресурсов или контейнеры и создает именованные кандидаты ресурсов с использованием определенных соглашений об именах файлов и папок.</summary>
+    </member>
+    <member name="M:Windows.ApplicationModel.Resources.Management.ResourceIndexer.#ctor(Windows.Foundation.Uri)">
+      <summary>Создает объект Windows.ApplicationModel.Resources.Management.ResourceIndexer, указывая корневой каталог файлов проекта.</summary>
+      <param name="projectRoot">Корневая папка проекта (file:// URI).</param>
+    </member>
+    <member name="M:Windows.ApplicationModel.Resources.Management.ResourceIndexer.#ctor(Windows.Foundation.Uri,Windows.Foundation.Uri)">
+      <summary>Создает объект Windows.ApplicationModel.Resources.Management.ResourceIndexer, указывая корневой каталог файлов проекта и DLL-библиотеку расширений.</summary>
+      <param name="projectRoot">Корневая папка проекта (file:// URI).</param>
+      <param name="extensionDllPath">Путь к библиотеке DLL расширения (file:// URI).</param>
+    </member>
+    <member name="M:Windows.ApplicationModel.Resources.Management.ResourceIndexer.IndexFileContentsAsync(Windows.Foundation.Uri)">
+      <summary>Индексирует путь к файлу дампа ResW, ResJSON, PRI или XML PRI для соглашений об именах файлов и папок и применяет квалификаторы к ресурсам, найденным в содержимом файла.</summary>
+      <param name="file">Файл для индексации (file:// URI). Путь должен являться абсолютным путем с указанием буквы диска. Windows.Foundation.Uri также может предоставлять пустые полномочия, которые расцениваются как локальная файловая система. Длинные пути к файлам не поддерживаются.</param>
+      <returns>Список объектов Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate, найденных в *файле*. Это пустой список, если ничего не найдено.</returns>
+    </member>
+    <member name="M:Windows.ApplicationModel.Resources.Management.ResourceIndexer.IndexFilePath(Windows.Foundation.Uri)">
+      <summary>Индексирует путь к файлу для соглашений об именах файлов и папок.</summary>
+      <param name="filePath">Файл для индексации (file:// URI). Путь должен являться абсолютным путем с указанием буквы диска. Windows.Foundation.Uri также может предоставлять пустые полномочия, которые расцениваются как локальная файловая система. Длинные пути к файлам не поддерживаются.</param>
+      <returns>Объект Windows.ApplicationModel.Resources.Management.IndexedResourceCandidate, который представляет индексированный файловый ресурс.</returns>
+    </member>
+    <member name="T:Windows.ApplicationModel.Resources.Management.ResourceIndexerContract">
+      <summary>
+      </summary>
+    </member>
+  </members>
+</doc>
